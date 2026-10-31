@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SportBook Escolar</title>
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>SportBook Escolar</h1>
+        <p>Administración de espacios deportivos</p>
+    </header>
+
+    <main>
+
+        <!-- FORMULARIO -->
+        <section class="contenedor">
+
+            <h2>Registrar nuevo espacio</h2>
+
+            <form id="formEspacio">
+
+                <div class="campo">
+                    <label for="nombre">Nombre</label>
+                    <input
+                        type="text"
+                        id="nombre"
+                        required
+                        placeholder="Ej: Cancha auxiliar"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="tipo">Tipo</label>
+                    <input
+                        type="text"
+                        id="tipo"
+                        required
+                        placeholder="Ej: Microfútbol"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="capacidad">Capacidad</label>
+                    <input
+                        type="number"
+                        id="capacidad"
+                        required
+                        min="1"
+                        placeholder="Ej: 12"
+                    >
+                </div>
+
+                <div class="campo">
+                    <label for="estado">Estado</label>
+
+                    <select id="estado" required>
+                        <option value="Disponible">
+                            Disponible
+                        </option>
+
+                        <option value="Mantenimiento">
+                            Mantenimiento
+                        </option>
+
+                        <option value="No disponible">
+                            No disponible
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="acciones-formulario">
+
+                    <button
+                        type="submit"
+                        id="btnGuardar"
+                    >
+                        Guardar espacio
+                    </button>
+
+                    <button
+                        type="button"
+                        id="btnCancelar"
+                        class="btn-cancelar"
+                        style="display: none;"
+                    >
+                        Cancelar edición
+                    </button>
+
+                </div>
+
+            </form>
+
+            <p id="mensaje"></p>
+
+        </section>
+
+
+        <!-- TABLA -->
+        <section class="contenedor">
+
+            <h2>Espacios registrados</h2>
+
+            <table>
+
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Tipo</th>
+                        <th>Capacidad</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+
+                <tbody id="tablaEspacios">
+
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </main>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
